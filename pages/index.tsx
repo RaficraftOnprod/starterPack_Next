@@ -1,9 +1,8 @@
+import { IconWarning } from '@/core/assets/icons/icons'
+import Button from '@/core/components/atoms/form/Button/Button'
+import Navigation from '@/core/components/molecules/navigation/Navigation'
+import Header from '@/core/components/organisms/Header/Header'
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
@@ -14,108 +13,131 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.tsx</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
-          </div>
-        </div>
+      <main
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '2rem',
+          flexWrap: 'wrap',
+        }}
+      >
+        <Header>
+          <Navigation></Navigation>
+        </Header>
 
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
-          </div>
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            flexDirection: 'column',
+            alignItems: 'center',
+            margin: '1rem 1rem',
+            gap: '1rem',
+          }}
+        >
+          {/* <Button radius="md" type="submit">
+            Button extra small
+          </Button>
+          <Button radius="full" type="submit" icon={<IconWarning />}>
+            Button extra small avec une icône à gauche
+          </Button>
+          <Button radius="md" type="submit" iconRight={<IconWarning />}>
+            Button extra small avec une icône à droite
+          </Button>
+          <Button size="sm" radius="md" type="submit">
+            Button small
+          </Button>
+          <Button size="sm" radius="md" type="submit" icon={<IconWarning />}>
+            Button small avec un icône à gauche
+          </Button>
+          <Button
+            size="sm"
+            radius="md"
+            type="submit"
+            iconRight={<IconWarning />}
           >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
+            Button small avec un icône à droite
+          </Button>
+          <Button size="md" radius="md" type="submit">
+            Button medium
+          </Button>
+          <Button size="md" radius="md" type="submit" icon={<IconWarning />}>
+            Button medium avec un icone à gauche
+          </Button>
+          <Button
+            color="secondary"
+            size="md"
+            radius="md"
+            type="submit"
+            iconRight={<IconWarning />}
           >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
+            Button medium avec un icone à droite
+          </Button>
+          <Button size="lg" radius="md" type="submit">
+            Button large
+          </Button>
 
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
+          <Button size="lg" radius="md" type="submit" icon={<IconWarning />}>
+            Button large avec un icone à gauche
+          </Button>
 
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Button
+            size="lg"
+            radius="md"
+            type="submit"
+            iconRight={<IconWarning />}
           >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
+            Button large avec un icone à droite
+          </Button> */}
+
+          <Button size="xl" radius="md" type="submit" shadow flat>
+            Button extra large
+          </Button>
+
+          <Button
+            color="secondary"
+            size="xl"
+            radius="full"
+            type="submit"
+            flat
+            icon={<IconWarning />}
+          >
+            Button extra large
+          </Button>
+
+          <Button
+            color="alert"
+            size="xl"
+            radius="md"
+            type="submit"
+            flat
+            iconRight={<IconWarning />}
+            bordered
+            shadow
+          >
+            Button extra large
+          </Button>
+
+          <Button
+            color="alert"
+            size="xl"
+            radius="md"
+            type="submit"
+            flat
+            iconRight={<IconWarning />}
+            light
+          >
+            Button extra large
+          </Button>
+
+          <Button
+            color="warning"
+            size="xl"
+            radius="md"
+            type="submit"
+            flat
+            iconRight={<IconWarning />}
+          ></Button>
         </div>
       </main>
     </>

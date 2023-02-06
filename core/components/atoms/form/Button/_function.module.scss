@@ -1,0 +1,179 @@
+
+@mixin getColors($colors){
+
+  @each $color, $shades in $colors {  
+    @each $shade,
+    $value in $shades {
+      .btn_#{$color}-std {
+        @if ($shade ==500) {
+          background-color: #{$value};
+
+          @if (lightness($value) > 50) {
+            color: map-get($colors, $color, 50);
+          }
+
+          @else {
+            color: map-get($colors, $color, 900);
+          }
+
+          &:hover {
+            transition: var(--ak-transitions);
+            background-color: map-get($colors, $color, 100);
+            color: map-get($colors, $color, 500);
+          }
+        }
+
+        $fakeBorder: 0px 0px 0px 2px map-get($colors, $color, 500) inset;
+
+        &__bordered {
+          @if ($shade ==500) {
+            background-color: white;
+            box-shadow: $fakeBorder;
+            color: #{$value};
+
+            &:hover {
+              transition: var(--ak-transitions);
+              background-color: #{$value};
+              color: map-get($colors, $color, 50);
+            }
+          }
+        }
+
+        $shadow: 0px 4px 14px 0px map-get($colors, $color, 300);
+
+        &__bordered__shadow {
+          @if ($shade ==500) {
+            background-color: white;
+            box-shadow: $fakeBorder, $shadow;
+          }
+        }
+
+        &__shadow {
+          @if ($shade ==500) {
+            box-shadow: $shadow;
+          }
+        }
+
+        &__light {
+          @if ($shade ==500) {
+            background-color: transparent;
+            color: #{$value};
+
+            &:hover {
+              background-color: transparent;
+              color: map-get($colors, $color, 900);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@mixin getFlatColors($colors) {
+
+  @each $color,
+  $shades in $colors {
+
+    @each $shade,
+    $value in $shades {
+      .btn_#{$color}-flat {
+        @if ($shade ==500) {
+          background-color: map-get($colors, $color, 100);
+
+          @if (lightness($value) > 50) {
+            color: map-get($colors, $color, 500);
+          }
+
+          @else {
+            color: map-get($colors, $color, 200);
+          }
+
+          &:hover {
+            transition: var(--ak-transitions);
+            background-color: map-get($colors, $color, 200);
+            color: map-get($colors, $color, 700);
+          }
+        }
+
+        $fakeBorder: 0px 0px 0px 2px map-get($colors, $color, 200) inset;
+
+        &__bordered {
+          @if ($shade ==500) {
+            box-shadow: $fakeBorder;
+            color: #{$value};
+          }
+        }
+
+        $shadow: 0px 4px 14px 0px map-get($colors, $color, 300);
+
+        &__bordered__shadow {
+          @if ($shade ==500) {
+            box-shadow: $fakeBorder, $shadow;
+          }
+        }
+
+        &__shadow {
+          @if ($shade ==500) {
+            box-shadow: $shadow;
+          }
+        }
+
+        &__light {
+          @if ($shade ==500) {
+            background-color: transparent;
+            color: #{$value};
+
+            &:hover {
+              background-color: transparent;
+              color: map-get($colors, $color, 900);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin buttonSizing($name, $fontSize, $iconSize) {
+  .btn {
+    &_#{$name} {
+      $paddingY: calc(#{$fontSize} / 1.75);
+      $paddingX: calc(#{$fontSize} * 2.25);
+      padding: $paddingY $fontSize;
+      font-size: $fontSize; //12 px
+
+      // Enlarge button when it has an icon
+      &:has(.icon__left) {
+        padding-left: $paddingX;
+      }
+
+      &:has(.icon__right) {
+        padding-right: $paddingX;
+      }
+
+      &:has(.icon__single) {
+        padding: calc($iconSize * 1.125);
+      }
+
+      .icon__left {
+        left: $paddingY;
+      }
+
+      .icon__right {
+        right: $paddingY;
+      }
+
+      svg {
+        @include size($iconSize)
+      }
+
+      .icon__single {
+        svg {
+          @include size(calc($iconSize * 1.5));
+        }
+      }
+    }
+  }
+}

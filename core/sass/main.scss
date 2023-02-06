@@ -1,0 +1,120 @@
+@use './abstracts/breakpoints' as *;
+@use './abstracts/colors' as *;
+@use './abstracts/spaces' as *;
+@use './abstracts/fontSize' as *;
+@use './utils/other.module.scss';
+@import './abstracts/mixin.scss';
+
+:root {
+  // 5px
+  --ak-radius-xs: 0.375rem;
+  // 8px
+  --ak-radius-sm: 0.5rem;
+  // 12px
+  --ak-radius-md: 0.75rem;
+  // 14 px
+  --ak-radius-base: 0.875rem;
+  --ak-radius-lg: 1rem;
+  --ak-radius-xl: 1.125rem;
+  --ak-radius-2xl: 1.5rem;
+  --ak-radius-3xl: 2rem;
+  --ak-radius-rounded: 50%;
+  --ak-radius-pill: 9999px;
+
+  --ak-layout-maxWidth: 1440px;
+
+  --ak-borderWeight-xs: 1px;
+  --ak-borderWeight-sm: 2px;
+  --ak-borderWeight-md: 3px;
+  --ak-borderWeight-lg: 4px;
+  --ak-borderWeight-xl: 5px;
+
+  --ak-breakpoints-xs: $breakpoints.xs;
+  --ak-breakpoints-sm: $breakpoints.sm;
+  --ak-breakpoints-md: $breakpoints.md;
+  --ak-breakpoints-lg: $breakpoints.lg;
+  --ak-breakpoints-xl: $breakpoints.xl;
+
+  --ak-zIndex-0: -1;
+  --ak-zIndex-1: 100;
+  --ak-zIndinces-2: 200;
+  --ak-zIndex-3: 300;
+  --ak-zIndex-4: 400;
+  --ak-zIndex-5: 500;
+  --ak-zIndex-max: 999999;
+
+  --ak-transitions: all 0.5s ease;
+
+  --ak-fontWeight-thin: 100;
+  --ak-fontWeight-thin: 200;
+  --ak-fontWeight-light: 300;
+  --ak-fontWeight-normal: 400;
+  --ak-fontWeight-medium: 500;
+  --ak-fontWeight-semibold: 600;
+  --ak-fontWeight-bold: 700;
+  --ak-fontWeight-extrabold: 800;
+  --ak-fontWeight-hard: 900;
+
+  --ak-lineHeights-xs: 1;
+  --ak-lineHeights-sm: 1.25;
+  --ak-lineHeights-base: 1.5;
+  --ak-lineHeights-md: 1.5;
+  --ak-lineHeights-lg: 1.75;
+  --ak-lineHeights-xl: 1.75;
+  --ak-lineHeights-2xl: 2;
+  --ak-lineHeights-3xl: 2.25;
+  --ak-lineHeights-4xl: 2.5;
+  --ak-lineHeights-5xl: 1;
+  --ak-lineHeights-6xl: 1;
+  --ak-lineHeights-7xl: 1;
+  --ak-lineHeights-8xl: 1;
+  --ak-lineHeights-9xl: 1;
+
+  @each $screen-size, $font-size in $font-sizes {
+    @if $screen-size == sm {
+      @each $size, $value in $font-size {
+        --ak-fontSizes-#{$size}: #{$value};
+      }
+    } @else {
+      @include mq(sm) {
+        @each $size, $value in $font-size {
+          --ak-fontSizes-#{$size}: #{$value};
+        }
+      }
+    }
+  }
+
+  @each $color, $shades in $colors {
+    @each $shade, $value in $shades {
+      --ak-colors-#{$color}#{$shade}: #{$value};
+    }
+  }
+
+  @each $space, $deeps in $spaces {
+    @each $deep in $deeps {
+      --ak-space-#{$space}: #{$deep};
+    }
+  }
+}
+
+// dispatch on abstract files
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.letterSpacing_sm {
+  letter-spacing: 2px;
+}
+
+.letterSpacing_md {
+  letter-spacing: 5px;
+}
+
+.letterSpacing_xl {
+  letter-spacing: 8px;
+}
+
+.fullWidth {
+  min-width: 100%;
+}
