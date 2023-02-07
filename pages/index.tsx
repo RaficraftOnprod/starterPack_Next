@@ -90,8 +90,8 @@ export default function Home() {
             Button large avec un icone à droite
           </Button> */}
 
-          <Button size="xl" radius="md" type="submit" shadow>
-            Button extra large
+          <Button size="xl" radius="md" type="submit" shadow bordered>
+            Button extra large borderd
           </Button>
 
           <Button

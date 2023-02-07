@@ -28,7 +28,7 @@
 
         &__bordered {
           @if ($shade ==500) {
-            background-color: white;
+            background-color: var(--ak-light);
             box-shadow: $fakeBorder;
             color: #{$value};
 
@@ -44,7 +44,7 @@
 
         &__bordered__shadow {
           @if ($shade ==500) {
-            background-color: white;
+            background-color: var(--ak-light);
             box-shadow: $fakeBorder, $shadow;
           }
         }

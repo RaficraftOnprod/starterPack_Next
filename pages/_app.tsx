@@ -51,7 +51,7 @@ export default function App({ Component, pageProps }: AppProps) {
   }
 
   useIsomorphicLayoutEffect(() => {
-    themeKit(AtoTheme)
+    // themeKit(AtoTheme)
   }, [])
 
   return <Component {...pageProps} />
