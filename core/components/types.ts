@@ -1,4 +1,4 @@
-export type sizingScale = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full' | 'auto'
+export type sizingScale = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full' | 'auto';
 export type colorRange =
   | 'primary'
   | 'secondary'

@@ -1,13 +1,13 @@
 .radius_sm {
-  border-radius: 3px;
+  border-radius: var(--ak-radius-sm);
 }
 
 .radius_md {
-  border-radius: 8px;
+  border-radius: var(--ak-radius-md);
 }
 
 .radius_lg {
-  border-radius: 1rem;
+  border-radius: var(--ak-radius-lg);
 }
 
 .radius_full {

@@ -6,24 +6,25 @@
     $value in $shades {
       .btn_#{$color}-std {
         @if ($shade ==500) {
-          background-color: #{$value};
+          //--ak-colors-primary500
+          background-color: var(--ak-colors-+#{$color}+#{$shade});
 
           @if (lightness($value) > 50) {
-            color: map-get($colors, $color, 50);
+            color: var(--ak-colors-+#{$color}+50);
           }
 
           @else {
-            color: map-get($colors, $color, 900);
+            color: var(--ak-colors-+#{$color}+900);
           }
 
           &:hover {
             transition: var(--ak-transitions);
-            background-color: map-get($colors, $color, 100);
-            color: map-get($colors, $color, 500);
+            background-color: var(--ak-colors-+#{$color}+100);
+            color: var(--ak-colors-+#{$color}+500);
           }
         }
 
-        $fakeBorder: 0px 0px 0px 2px map-get($colors, $color, 500) inset;
+        $fakeBorder: 0px 0px 0px 2px var(--ak-colors-+#{$color}+500) inset;
 
         &__bordered {
           @if ($shade ==500) {
@@ -34,12 +35,12 @@
             &:hover {
               transition: var(--ak-transitions);
               background-color: #{$value};
-              color: map-get($colors, $color, 50);
+              color: var(--ak-colors-+#{$color}+50);
             }
           }
         }
 
-        $shadow: 0px 4px 14px 0px map-get($colors, $color, 300);
+        $shadow: 0px 4px 14px 0px var(--ak-colors-+#{$color}+300);
 
         &__bordered__shadow {
           @if ($shade ==500) {
@@ -61,7 +62,7 @@
 
             &:hover {
               background-color: transparent;
-              color: map-get($colors, $color, 900);
+              color: var(--ak-colors-+#{$color}+900);;
             }
           }
         }
@@ -80,24 +81,24 @@
     $value in $shades {
       .btn_#{$color}-flat {
         @if ($shade ==500) {
-          background-color: map-get($colors, $color, 100);
+          background-color: var(--ak-colors-+#{$color}+100);;
 
           @if (lightness($value) > 50) {
-            color: map-get($colors, $color, 500);
+            color: var(--ak-colors-+#{$color}+900);
           }
 
           @else {
-            color: map-get($colors, $color, 200);
+            color: var(--ak-colors-+#{$color}+200);
           }
 
           &:hover {
             transition: var(--ak-transitions);
-            background-color: map-get($colors, $color, 200);
-            color: map-get($colors, $color, 700);
+            background-color: var(--ak-colors-+#{$color}+200);
+            color: var(--ak-colors-+#{$color}+700);
           }
         }
 
-        $fakeBorder: 0px 0px 0px 2px map-get($colors, $color, 200) inset;
+        $fakeBorder: 0px 0px 0px 2px var(--ak-colors-+#{$color}+200) inset;
 
         &__bordered {
           @if ($shade ==500) {
@@ -106,7 +107,7 @@
           }
         }
 
-        $shadow: 0px 4px 14px 0px map-get($colors, $color, 300);
+        $shadow: 0px 4px 14px 0px var(--ak-colors-+#{$color}+300);
 
         &__bordered__shadow {
           @if ($shade ==500) {

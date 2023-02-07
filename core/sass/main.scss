@@ -6,6 +6,8 @@
 @import './abstracts/mixin.scss';
 
 :root {
+
+  
   // 5px
   --ak-radius-xs: 0.375rem;
   // 8px
@@ -21,7 +23,7 @@
   --ak-radius-rounded: 50%;
   --ak-radius-pill: 9999px;
 
-  --ak-layout-maxWidth: 1440px;
+  --ak-layout-width: 1440px;
 
   --ak-borderWeight-xs: 1px;
   --ak-borderWeight-sm: 2px;
@@ -29,7 +31,7 @@
   --ak-borderWeight-lg: 4px;
   --ak-borderWeight-xl: 5px;
 
-  --ak-breakpoints-xs: $breakpoints.xs;
+  --ak-breakpoints-xs: 650px;
   --ak-breakpoints-sm: $breakpoints.sm;
   --ak-breakpoints-md: $breakpoints.md;
   --ak-breakpoints-lg: $breakpoints.lg;

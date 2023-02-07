@@ -13,27 +13,29 @@
   box-shadow: 0px 0px 0px 2px transparent inset;
   transition: var(--ak-transitions);
   cursor: pointer;
-
-  &_disabled {
-    background-color: hsl(0, 0%, 85%);
-    color: hsl(0, 0%, 61%);
-    border: 1px solid hsl(0, 0%, 61%);
-    text-decoration: line-through;
-    cursor: not-allowed;
-    &:hover {
-      background-color: hsl(0, 0%, 85%);
-      color: hsl(0, 0%, 61%);
-    }
-  }
 }
 
-@include getColors($colors);
-@include getFlatColors($colors);
 @include buttonSizing("xs", var(--ak-fontSizes-xs), var(--ak-fontSizes-sm));
 @include buttonSizing("sm", var(--ak-fontSizes-sm), var(--ak-fontSizes-md));
 @include buttonSizing("md", var(--ak-fontSizes-md), var(--ak-fontSizes-xl));
 @include buttonSizing("lg", var(--ak-fontSizes-xl), var(--ak-fontSizes-2xl));
 @include buttonSizing("xl", var(--ak-fontSizes-2xl), var(--ak-fontSizes-3xl));
+@include getColors($colors);
+@include getFlatColors($colors);
+
+
+.btn_disabled {
+   background-color: hsl(0, 0%, 85%);
+   color: hsl(0, 0%, 61%);
+   border: 1px solid hsl(0, 0%, 61%);
+   text-decoration: line-through;
+   cursor: not-allowed;
+
+   &:hover {
+     background-color: hsl(0, 0%, 85%);
+     color: hsl(0, 0%, 61%);
+   }
+}
 
 // Items
 

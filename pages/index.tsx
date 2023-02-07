@@ -90,7 +90,7 @@ export default function Home() {
             Button large avec un icone à droite
           </Button> */}
 
-          <Button size="xl" radius="md" type="submit" shadow flat>
+          <Button size="xl" radius="md" type="submit" shadow>
             Button extra large
           </Button>
 
@@ -99,7 +99,6 @@ export default function Home() {
             size="xl"
             radius="full"
             type="submit"
-            flat
             icon={<IconWarning />}
           >
             Button extra large
@@ -138,6 +137,16 @@ export default function Home() {
             flat
             iconRight={<IconWarning />}
           ></Button>
+          <Button
+            color="warning"
+            size="lg"
+            radius="md"
+            type="submit"
+            iconRight={<IconWarning />}
+            disabled
+          >
+            Disabled{' '}
+          </Button>
         </div>
       </main>
     </>

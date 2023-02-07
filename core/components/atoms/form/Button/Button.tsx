@@ -1,5 +1,5 @@
 import { PropsWithChildren, FC, HTMLAttributes } from 'react'
-import { colorRange, sizingScale } from '../../types'
+import { colorRange, sizingScale } from '../../../types'
 import styles from './Button.module.scss'
 
 type Props = PropsWithChildren<{
@@ -44,8 +44,6 @@ const Button: FC<Partial<Props>> = ({
   }
   const singleIcon = children ? false : true
   const colorType = color && !flat ? '-std' : '-flat'
-
-  console.log(singleIcon)
 
   const buttonStyles: string[] | string = [
     size && styles[`btn_${size}`],
